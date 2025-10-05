@@ -8,7 +8,10 @@ const LoginContainer = () => {
         <p>Sign in to manage your system</p>
       </div>
       <div>
-        
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
       </div>
     </div>
   );
