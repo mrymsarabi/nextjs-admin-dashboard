@@ -45,7 +45,7 @@ export function Sidebar() {
       {/* Logo */}
       <div className="flex items-center gap-3 px-6 py-5 border-b border-default">
         <div className="relative">
-          <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-indigo-500 via-violet-500 to-pink-500 flex items-center justify-center shadow-lg shadow-indigo-500/30">
+          <div className="w-9 h-9 rounded-xl bg-linear-to-br from-indigo-500 via-violet-500 to-pink-500 flex items-center justify-center shadow-lg shadow-indigo-500/30">
             <Zap className="w-5 h-5 text-white" strokeWidth={2.5} />
           </div>
           <div className="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-emerald-400 rounded-full border-2 border-[rgb(var(--card))]" />
@@ -60,7 +60,7 @@ export function Sidebar() {
       <div className="px-4 py-3">
         <button className="w-full flex items-center justify-between gap-2 px-3 py-2 rounded-lg border border-default hover:bg-[rgb(var(--card-muted))] transition-colors">
           <div className="flex items-center gap-2 min-w-0">
-            <div className="w-7 h-7 rounded-md bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center text-white font-semibold text-xs shrink-0">
+            <div className="w-7 h-7 rounded-md bg-linear-to-br from-amber-400 to-orange-500 flex items-center justify-center text-white font-semibold text-xs shrink-0">
               A
             </div>
             <div className="flex flex-col items-start min-w-0">
@@ -91,10 +91,10 @@ export function Sidebar() {
 
       {/* Upgrade card */}
       <div className="px-4 pb-4">
-        <div className="relative overflow-hidden rounded-xl p-4 bg-gradient-to-br from-indigo-500/10 via-violet-500/10 to-pink-500/10 border border-default">
+        <div className="relative overflow-hidden rounded-xl p-4 bg-linear-to-br from-indigo-500/10 via-violet-500/10 to-pink-500/10 border border-default">
           <div className="absolute -top-6 -right-6 w-20 h-20 bg-indigo-500/20 rounded-full blur-2xl" />
           <div className="relative">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-violet-500 flex items-center justify-center mb-2">
+            <div className="w-8 h-8 rounded-lg bg-linear-to-br from-indigo-500 to-violet-500 flex items-center justify-center mb-2">
               <Zap className="w-4 h-4 text-white" />
             </div>
             <div className="text-sm font-semibold mb-0.5">Upgrade to Pro</div>
