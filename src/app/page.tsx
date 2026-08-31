@@ -28,6 +28,7 @@ import { Topbar } from "@/components/topbar";
 // import { ActivityFeed, TopProducts, RegionsList } from "@/components/activity-feed";
 import { kpis } from "@/lib/mock-data";
 import { cn } from "@/lib/utils";
+import { KpiCard } from "@/components/kpi-card";
 
 type TimeRange = "7d" | "30d" | "90d" | "1y";
 
@@ -85,9 +86,83 @@ export default function DashboardPage() {
                     {r}
                   </button>
                 ))}
+                <button className="text-xs font-medium px-3 py-1.5 rounded-md text-muted hover:text-[rgb(var(--foreground))] inline-flex items-center gap-1.5">
+                  <Calendar className="w-3 h-3" />
+                  Custom
+                </button>
               </div>
+
+              <button
+                onClick={handleRefresh}
+                className="w-9 h-9 rounded-lg border border-default bg-[rgb(var(--card))] hover:bg-[rgb(var(--card-muted))] transition-colors inline-flex items-center justify-center"
+                aria-label="Refresh"
+              >
+                <RefreshCw
+                  className={cn("w-4 h-4", isRefreshing && "animate-spin")}
+                />
+              </button>
+              <button className="w-9 h-9 rounded-lg border border-default bg-[rgb(var(--card))] hover:bg-[rgb(var(--card-muted))] transition-colors inline-flex items-center justify-center" aria-label="Share">
+                <Share2 className="w-4 h-4" />
+              </button>
+              <button className="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-2 rounded-lg bg-[rgb(var(--foreground))] text-[rgb(var(--background))] hover:opacity-90 transition-opacity">
+                <Download className="w-3.5 h-3.5" />
+                Export report
+              </button>
             </div>
           </div>
+
+          {/* Last updated */}
+          <div className="flex items-center gap-2 text-xs text-muted">
+            <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+            <span>
+              Live · Last updated {lastUpdated.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}
+            </span>
+            <span className="ml-auto hidden sm:inline">
+              Showing data for the last {range === "7d" ? "7 days" : range === "30d" ? "30 days" : range === "90d" ? "90 days" : "year"}
+            </span>
+          </div>
+
+          {/* KPI cards */}
+          <section className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
+            <KpiCard
+              label={kpis.revenue.label}
+              value={kpis.revenue.value}
+              change={kpis.revenue.change}
+              trend={kpis.revenue.trend}
+              icon={DollarSign}
+              prefix="$"
+              accent="indigo"
+              delay={0}
+            />
+            <KpiCard
+              label={kpis.users.label}
+              value={kpis.users.value}
+              change={kpis.users.change}
+              trend={kpis.users.trend}
+              icon={Users}
+              accent="emerald"
+              delay={50}
+            />
+            <KpiCard
+              label={kpis.orders.label}
+              value={kpis.orders.value}
+              change={kpis.orders.change}
+              trend={kpis.orders.trend}
+              icon={ShoppingBag}
+              accent="pink"
+              delay={100}
+            />
+            <KpiCard
+              label={kpis.conversion.label}
+              value={kpis.conversion.value}
+              change={kpis.conversion.change}
+              trend={kpis.conversion.trend}
+              icon={Target}
+              suffix="%"
+              accent="amber"
+              delay={150}
+            />
+          </section>
         </main>
       </div>
     </div>
