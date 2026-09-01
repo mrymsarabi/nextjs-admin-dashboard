@@ -29,6 +29,7 @@ import { Topbar } from "@/components/topbar";
 import { kpis } from "@/lib/mock-data";
 import { cn } from "@/lib/utils";
 import { KpiCard } from "@/components/kpi-card";
+import { RevenueChart } from "@/components/charts/revenue-chart";
 
 type TimeRange = "7d" | "30d" | "90d" | "1y";
 
@@ -195,7 +196,7 @@ export default function DashboardPage() {
                   <LegendDot color="#10b981" label="Profit" value="$439k" />
                 </div>
               </div>
-              
+              <RevenueChart />
             </div>
 
             <div>
