@@ -50,6 +50,17 @@ export default function DashboardPage() {
     const timer = setInterval(() => setLastUpdated(new Date()), 30000);
     return () => clearInterval(timer);
   }, []);
+
+  function LegendDot({ color, label, value }: { color: string; label: string; value: string }) {
+    return (
+      <div className="hidden sm:flex items-center gap-1.5">
+        <span className="w-2 h-2 rounded-full" style={{ backgroundColor: color }} />
+        <span className="text-muted">{label}</span>
+        <span className="font-semibold">{value}</span>
+      </div>
+    );
+  }
+
   return (
     <div className="flex min-h-screen bg-[rgb(var(--background))]">
       <Sidebar />
@@ -162,6 +173,34 @@ export default function DashboardPage() {
               accent="amber"
               delay={150}
             />
+          </section>
+
+          {/* Main charts row */}
+          <section className="grid grid-cols-1 xl:grid-cols-3 gap-4">
+            {/* Revenue chart */}
+            <div className="card p-5 xl:col-span-2">
+              <div className="flex items-start justify-between mb-4">
+                <div>
+                  <h2 className="text-base font-semibold flex items-center gap-2">
+                    <TrendingUp className="w-4 h-4 text-[rgb(var(--accent))]" />
+                    Revenue overview
+                  </h2>
+                  <p className="text-xs text-muted mt-0.5">
+                    Revenue, expenses and profit over time
+                  </p>
+                </div>
+                <div className="flex items-center gap-4 text-xs">
+                  <LegendDot color="#6366f1" label="Revenue" value="$863k" />
+                  <LegendDot color="#ec4899" label="Expenses" value="$424k" />
+                  <LegendDot color="#10b981" label="Profit" value="$439k" />
+                </div>
+              </div>
+              
+            </div>
+
+            <div>
+
+            </div>
           </section>
         </main>
       </div>
