@@ -30,6 +30,7 @@ import { kpis } from "@/lib/mock-data";
 import { cn } from "@/lib/utils";
 import { KpiCard } from "@/components/kpi-card";
 import { RevenueChart } from "@/components/charts/revenue-chart";
+import { TrafficChart } from "@/components/charts/traffic-chart";
 
 type TimeRange = "7d" | "30d" | "90d" | "1y";
 
@@ -199,8 +200,23 @@ export default function DashboardPage() {
               <RevenueChart />
             </div>
 
-            <div>
-
+            {/* Traffic sources */}
+            <div className="card p-5">
+              <div className="flex items-start justify-between mb-2">
+                <div>
+                  <h2 className="text-base font-semibold flex items-center gap-2">
+                    <Globe2 className="w-4 h-4 text-[rgb(var(--accent))]" />
+                    Traffic sources
+                  </h2>
+                  <p className="text-xs text-muted mt-0.5">
+                    Where your visitors come from
+                  </p>
+                </div>
+                <button className="w-7 h-7 rounded-md hover:bg-[rgb(var(--card-muted))] inline-flex items-center justify-center">
+                  <MoreHorizontal className="w-4 h-4 text-muted" />
+                </button>
+              </div>
+              <TrafficChart />
             </div>
           </section>
         </main>
