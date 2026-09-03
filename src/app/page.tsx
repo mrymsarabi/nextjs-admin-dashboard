@@ -33,6 +33,7 @@ import { RevenueChart } from "@/components/charts/revenue-chart";
 import { TrafficChart } from "@/components/charts/traffic-chart";
 import { ActivityChart } from "@/components/charts/activity-chart";
 import { PerformanceChart } from "@/components/charts/performance-chart";
+import { TransactionsTable } from "@/components/transactions-table";
 
 type TimeRange = "7d" | "30d" | "90d" | "1y";
 
@@ -262,6 +263,27 @@ export default function DashboardPage() {
               <PerformanceChart />
             </div>
           </section>
+
+          {/* Transactions table */}
+          <section className="card p-5">
+            <div className="flex items-start justify-between mb-4">
+              <div>
+                <h2 className="text-base font-semibold flex items-center gap-2">
+                  <ShoppingBag className="w-4 h-4 text-[rgb(var(--accent))]" />
+                  Recent transactions
+                </h2>
+                <p className="text-xs text-muted mt-0.5">
+                  Latest customer orders across all channels
+                </p>
+              </div>
+              <button className="text-xs font-semibold text-[rgb(var(--accent))] hover:underline inline-flex items-center gap-1">
+                View all <ArrowUpRight className="w-3 h-3" />
+              </button>
+            </div>
+            <TransactionsTable />
+          </section>
+
+          
         </main>
       </div>
     </div>
