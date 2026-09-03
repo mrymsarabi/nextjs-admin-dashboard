@@ -32,6 +32,7 @@ import { KpiCard } from "@/components/kpi-card";
 import { RevenueChart } from "@/components/charts/revenue-chart";
 import { TrafficChart } from "@/components/charts/traffic-chart";
 import { ActivityChart } from "@/components/charts/activity-chart";
+import { PerformanceChart } from "@/components/charts/performance-chart";
 
 type TimeRange = "7d" | "30d" | "90d" | "1y";
 
@@ -242,8 +243,23 @@ export default function DashboardPage() {
               <ActivityChart />
             </div>
 
-            <div>
-
+            <div className="card p-5">
+              <div className="flex items-start justify-between mb-2">
+                <div>
+                  <h2 className="text-base font-semibold flex items-center gap-2">
+                    <Zap className="w-4 h-4 text-[rgb(var(--accent))]" />
+                    API performance
+                  </h2>
+                  <p className="text-xs text-muted mt-0.5">
+                    Response time over 24 hours
+                  </p>
+                </div>
+                <div className="text-right">
+                  <div className="text-xs font-bold">164ms</div>
+                  <div className="text-[10px] text-muted">p95 latency</div>
+                </div>
+              </div>
+              <PerformanceChart />
             </div>
           </section>
         </main>
