@@ -34,6 +34,7 @@ import { TrafficChart } from "@/components/charts/traffic-chart";
 import { ActivityChart } from "@/components/charts/activity-chart";
 import { PerformanceChart } from "@/components/charts/performance-chart";
 import { TransactionsTable } from "@/components/transactions-table";
+import { TopProducts } from "@/components/activity-feed";
 
 type TimeRange = "7d" | "30d" | "90d" | "1y";
 
@@ -283,7 +284,36 @@ export default function DashboardPage() {
             <TransactionsTable />
           </section>
 
-          
+          {/* Bottom row: top products, regions, activity */}
+          <section className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+            <div className="card p-5">
+              <div className="flex items-start justify-between mb-4">
+                <div>
+                  <h2 className="text-base font-semibold flex items-center gap-2">
+                    <Target className="w-4 h-4 text-[rgb(var(--accent))]" />
+                    Top products
+                  </h2>
+                  <p className="text-xs text-muted mt-0.5">Best performers this month</p>
+                </div>
+              </div>
+              <TopProducts />
+            </div>
+
+          </section>
+
+          {/* Footer */}
+          <footer className="pt-4 pb-2 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-muted">
+            <div>© 2026 Nebula Analytics. Crafted with care.</div>
+            <div className="flex items-center gap-4">
+              <a href="#" className="hover:text-[rgb(var(--foreground))]">Docs</a>
+              <a href="#" className="hover:text-[rgb(var(--foreground))]">Changelog</a>
+              <a href="#" className="hover:text-[rgb(var(--foreground))]">Status</a>
+              <span className="inline-flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                All systems operational
+              </span>
+            </div>
+          </footer>          
         </main>
       </div>
     </div>
