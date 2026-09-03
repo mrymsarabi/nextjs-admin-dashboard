@@ -31,6 +31,7 @@ import { cn } from "@/lib/utils";
 import { KpiCard } from "@/components/kpi-card";
 import { RevenueChart } from "@/components/charts/revenue-chart";
 import { TrafficChart } from "@/components/charts/traffic-chart";
+import { ActivityChart } from "@/components/charts/activity-chart";
 
 type TimeRange = "7d" | "30d" | "90d" | "1y";
 
@@ -217,6 +218,32 @@ export default function DashboardPage() {
                 </button>
               </div>
               <TrafficChart />
+            </div>
+          </section>
+
+          {/* Secondary charts row */}
+          <section className="grid grid-cols-1 xl:grid-cols-2 gap-4">
+            <div className="card p-5">
+              <div className="flex items-start justify-between mb-2">
+                <div>
+                  <h2 className="text-base font-semibold flex items-center gap-2">
+                    <Activity className="w-4 h-4 text-[rgb(var(--accent))]" />
+                    Weekly activity
+                  </h2>
+                  <p className="text-xs text-muted mt-0.5">
+                    Traffic engagement this week
+                  </p>
+                </div>
+                <span className="text-[10px] font-semibold px-2 py-0.5 rounded-md bg-emerald-500/10 text-emerald-500 border border-emerald-500/20">
+                  <ArrowUpRight className="w-3 h-3 inline -mt-0.5" />
+                  14.2%
+                </span>
+              </div>
+              <ActivityChart />
+            </div>
+
+            <div>
+
             </div>
           </section>
         </main>
