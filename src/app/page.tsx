@@ -34,7 +34,7 @@ import { TrafficChart } from "@/components/charts/traffic-chart";
 import { ActivityChart } from "@/components/charts/activity-chart";
 import { PerformanceChart } from "@/components/charts/performance-chart";
 import { TransactionsTable } from "@/components/transactions-table";
-import { TopProducts } from "@/components/activity-feed";
+import { ActivityFeed, RegionsList, TopProducts } from "@/components/activity-feed";
 
 type TimeRange = "7d" | "30d" | "90d" | "1y";
 
@@ -299,6 +299,31 @@ export default function DashboardPage() {
               <TopProducts />
             </div>
 
+            <div className="card p-5">
+              <div className="flex items-start justify-between mb-4">
+                <div>
+                  <h2 className="text-base font-semibold flex items-center gap-2">
+                    <Globe2 className="w-4 h-4 text-[rgb(var(--accent))]" />
+                    Users by region
+                  </h2>
+                  <p className="text-xs text-muted mt-0.5">Geographic distribution</p>
+                </div>
+              </div>
+              <RegionsList />
+            </div>
+
+            <div className="card p-5">
+              <div className="flex items-start justify-between mb-4">
+                <div>
+                  <h2 className="text-base font-semibold flex items-center gap-2">
+                    <Activity className="w-4 h-4 text-[rgb(var(--accent))]" />
+                    Activity feed
+                  </h2>
+                  <p className="text-xs text-muted mt-0.5">Live events from your team</p>
+                </div>
+              </div>
+              <ActivityFeed />
+            </div>
           </section>
 
           {/* Footer */}
