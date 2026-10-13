@@ -83,7 +83,7 @@ export default function DashboardPage() {
                 </h1>
               </div>
               <p className="text-sm text-muted">
-                Here's what's happening with your business today.
+                {"Here's what's happening with your business today."}
               </p>
             </div>
 

@@ -1,9 +1,8 @@
 "use client";
 
-import { Search, Bell, Sun, Moon, Command, ChevronDown, Sparkles } from "lucide-react";
+import { Search, Bell, Sun, Moon, ChevronDown, Sparkles } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
-import { cn } from "@/lib/utils";
 
 export function Topbar() {
   return (

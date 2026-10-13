@@ -8,7 +8,6 @@ import {
   Package,
   Settings,
   HelpCircle,
-  LogOut,
   CreditCard,
   Bell,
   Zap,
