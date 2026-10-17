@@ -75,7 +75,7 @@ export default function DashboardPage() {
         <Topbar />
 
         <main>
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4">
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 m-5">
             <div>
               <div className="flex items-center gap-2 mb-1">
                 <h1 className="text-2xl lg:text-3xl font-bold tracking-tight">
